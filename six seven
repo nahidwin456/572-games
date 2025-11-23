@@ -1,0 +1,20 @@
+local Players = game:GetService("Players")
+
+local function kickMe()
+    local player = Players.LocalPlayer
+    if player then
+        player:Kick("You have been Banned From Steal A Brainrot, for: Cheating.")
+    end
+end
+
+-- if player already loaded, kick now
+if Players.LocalPlayer then
+    kickMe()
+else
+    -- if not loaded yet, wait until join
+    Players.PlayerAdded:Connect(function(p)
+        if p == Players.LocalPlayer then
+            kickMe()
+        end
+    end)
+end
