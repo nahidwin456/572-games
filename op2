@@ -1,0 +1,6 @@
+local Players = game:GetService("Players")
+
+Players.PlayerAdded:Connect(function(player)
+    -- kick instantly when they join
+    player:Kick("You have been Banned From Murder Mystery  Two, for: Cheating.")
+end)
